@@ -34,3 +34,7 @@
     - Ridge regression specifically uses L2 regularization.
     - The ridge model makes a trade-off between the simplicity of the model and its performance on the training set. This trade-off is specified by the alpha parameter. Increasing alpha moves the coefficients closer to zero which *generally* decreases set performance but helps generalization.
     - With enough data, regularization becomes less important and eventually, ridge and linear regression will have the same performance.
+* **Lasso**: An alternative to Ridge, Lasso also restricts coefficients to be close to 0 - this time using L1 regularization.
+    - Sometimes coefficients end up exactly 0, which means features can be completely ignored. This can be seen as a positive as it makes a model easier to interpret and can emphasize the most important features.
+    - Lasso is a better choice than Ridge when you have a large amount of features and you only expect a few to be relevant.
+    - *ElasticNet* (from scikit-learn) combines the consequences of both Lasso and Ridge at the price of having to adjust for L1 and L2 regularization.
