@@ -38,3 +38,11 @@
     - Sometimes coefficients end up exactly 0, which means features can be completely ignored. This can be seen as a positive as it makes a model easier to interpret and can emphasize the most important features.
     - Lasso is a better choice than Ridge when you have a large amount of features and you only expect a few to be relevant.
     - *ElasticNet* (from scikit-learn) combines the consequences of both Lasso and Ridge at the price of having to adjust for L1 and L2 regularization.
+* **Linear Models For Classification**: ŷ = w[0] * x[0] + w[1] * x[1] + ... + w[p] * x[p] + b > 0*
+    - Instead of returning the weighted sum of the features as for regression, classification checks if the value is greater or less than 0.
+    - These models use a decision boundary to separate two classes using a line, plane, or hyperplane.
+    - The two most common linear classification algorithms are *logistic regression* and *linear support vector machines*. Both use L2 regularization. The trade-off parameter that determines the strength of regularization is called C. The larger the C, the weaker the regularization.
+    - Low values of C causes the algorithm to adjust to the majority while high values of C emphasizes the importance of each data point.
+    - Many linear classification models are for binary classifications only and don't extend naturally to multiclass classification (except for logistic regression). One technique to extend the binary algorithms to be multiclass is to use the *one-vs.-rest* approach where where a binary model is learned for each class that tries to separate itself from all other classes. To make a prediction, all classifiers are run on a test point where the classifier with the highest score on a single class has its label returned as the classificaiton.
+- If you assume only a few of your features are important, use L1 regularization, otherwise use L2 regularization.
+- Linear models excel when the number of features is large compared to the number of samples. They are also used on very large datasets where it is not feasible to train other models. However, it suffers in lower-dimensional spaces where other models have a better generalization performance.
