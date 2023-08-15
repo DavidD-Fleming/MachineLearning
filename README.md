@@ -70,3 +70,15 @@
     - A general strategy is to use a random tree first as they are quite robust. However, if prediction time is a premium or it is important to get that last drop of accuracy, you can switch to using gradient boosted trees.
     - The main drawback of gradient boosted decision trees is that you have to be very careful when tuning the parameters and it may take a while to train. However, like other trees, the algorithm works well without scaling and on a mixture of binary and continuous features. It does not work well with high-dimensional sparse data.
     - Whereas more estimators is always good for random trees, more estimators may lead to overfitting for gradient boosted trees.
+
+### Chapter 2: Kernelized Support Vector Machines**
+- Adding nonlinear features to the representation of our data can make linear models much more powerful.
+- Knowing which features to add can be difficult. However, there are kernel tricks you can use like the polynomial kernel and Gaussian kernel that directly compute the distance of the data points for the expanded representation without actually computing the expansion.
+- During training, the SVM learns how important each of the training data points are to represent the decision boundary between two classes. Only a subset of the points actually matter for defining the boundary, which are the support vectors.
+- Sometimes, datasets will have completely different orders of magnitude which can be devastating for kernel SVMs. One way to fix this problem is to rescale each feature so that they are all approximately on the same scale.
+- SVMs work well on low and high dimensional data but don't scale well with the number of samples.
+- Another downside is that SVMs require careful preprocessing of the data and tuning of parameters. Furthermore, they are hard to inspect and it can be difficult to understand why a particular prediction was made.
+
+* **Gaussian Kernel (Radial Basis Kernel)**: The distance between data points is k_rbf(x_1, x_2) = exp(-y * ||x_1 - x_2||^2) where x_1 and x_2 are the data points and y (gamma) is the parameter that controls the width of the kernel.
+    - The gamma parameter corresponds to the inverse of the width of the Gaussian kernel meaning the lower the value, the farther the reach. In other words, the wider the radius of the kernel, the further the influence of each training example. Gamma acts as the regularization parameter.
+    - The C parameter decides how strict the model is, where each data point can only have very limited influence. In creasing C means that points have a stronger influence on the model and tehrefore the decision boundary bends more to correctly classify them.
