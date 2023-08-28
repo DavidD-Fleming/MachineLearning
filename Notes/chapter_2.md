@@ -1,12 +1,3 @@
-# Machine Learning Notes
-##### Following: Introduction to Machine Learning with Python By Andreas C. Müller & Sarah Guido
-
-### Chapter 1: Introduction
-- There are two kinds of machine learning algorithms. Supervised learning which has pairs of inputs and desired outputs and unsupervised algorithms which only has input data.
-- Data used to build the machine learning model is the training data/training set.
-- Data used to assess how well a model works is the test data/test set/hold-out set.
-- Inspect data to find abnormalities such as inconsistent measurements. These inconsistencies are very common in the real world. You can identify these peculiarities by using visualizer like a scatter plot.
-
 ### Chapter 2: Supervised Learning**
 - One of the two types of supervised machine learning problems is classification. Classification can be split into binary classification which distinguishes between two classes or multiclass classification which tries to classify between multiple different classes.
 - The other type of supervised machine learning problems is regression. Regression types try to predict a continuous number or a floating-point number.
